@@ -1,0 +1,44 @@
+Author-
+	Gaurav,
+	3rd year Electrical Engineering,	
+	IIT Ropar,
+
+Functionalities of the api - 
+Login -  Make a post request - 'http://localhost:5000/api/login'
+Patch Json Data -  Make a post request - 'http://localhost:5000/api/patchData' 
+	Must Include- 
+		1.) Authentication Header with the token recieve from login 
+ For example - 
+(Authorization - Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjAwNyIsInBhc3N3b3JkIjoid2F0c29uIn0sImlhdCI6MTU1MTg5NTQzN30.UysX4uJTzafcPLNJmPwLDTH5ba8xAk9V8pPdJa4Qj_Y) 			2.) Body should contain a json data with doucument and patch as two json onjects containing json document and json patch respectively.
+For example -
+	{
+	"document":{
+	  "baz": "qux",
+	  "foo": "bar"
+	},
+	"patch":{
+	"p1":	  { "op": "replace", "path": "/baz", "value": "boo" },
+	 "p2": { "op": "add", "path": "/hello", "value": ["world"] },
+	 "p3": { "op": "remove", "path": "/foo" }
+	}
+	}
+	
+Resize the Image - Make a post request  - 'http://localhost:5000/api/resize'
+	Must Inlude- 
+		1.) Authentication Header with the token recieve from login 
+ For example - 
+(Authorization - Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjAwNyIsInBhc3N3b3JkIjoid2F0c29uIn0sImlhdCI6MTU1MTg5NTQzN30.UysX4uJTzafcPLNJmPwLDTH5ba8xAk9V8pPdJa4Qj_Y) 
+		2.) Body should contain form data (image attached).
+			Set the image value to be 'myImage'.
+
+
+
+To start the server. 
+
+Open the terminal in the root directory of the api.
+	$ npm install
+	$ npm start
+
+
+We can test the server using the Postman api testing tool .
+
